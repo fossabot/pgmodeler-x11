@@ -1,13 +1,13 @@
-# PGModeler-in-Docker (using X11)
+# pgModeler-in-Docker (using X11)
 
 ## What's this?
 Primarily it is a way to build and run [pgModeler](https://pgmodeler.io/) inside Docker.
 
 However, it is also a build environment that does cross-platform UI compilation from inside Docker, compiling using GTK and Rust.
-i.e. it is a mechanism to build Linux and macOS binaries in Docker (Windows support on its way).
+i.e. it is a mechanism to build Linux and macOS binaries in Docker.
 
 ## Why?
-* Because building PGModeler is harder than it should be.
+* Because building pgModeler is harder than it should be.
 * Because most distros are behind in their pgModeler version and/or don't have an easy way of getting the latest release - this gives another docker-based option to easily get a modern up-to-date pgModeler version. 
 * This allows you to easily switch between different pgModeler versions without clobbering your config directory. 
   
@@ -44,11 +44,6 @@ In order to be able to run this, you need to install gtk3 using either Brew or M
 * Docker
 * XQuartz
 
-### Windows
-***Coming Soon***
-* Docker
-* An X11 server
-
 ## Building the container
 
 In the `container` directory, run `./build.sh`.
@@ -59,7 +54,7 @@ This will take ~15 minutes.
 
 ## Build and install the launcher
 **\*\* Currently Linux Only \*\***
-In the `launcher` directory, run `./build.sh <platform>` where platform is linux, mac or windows. 
+In the `launcher` directory, run `./build.sh <platform>` where platform is linux, mac.
 Only Linux actually installs it now (for now). For macOs the binary is built but then needs to be run from the command line and have gtk3 installed (see "macOS Packaging").
 
 When the Linux build finished, it will create a .desktop entry in your /usr/share/applications/ directory, which means you can run pgModeler from your application launcher.
@@ -80,5 +75,3 @@ To run it:
 
 `docker run --rm -it --user $(id -u) -e DISPLAY=$MY_IP --workdir=$(pwd) --volume="/User/$USER:/home/$USER" --volume="/etc/group:/etc/group:ro" --volume="/etc/passwd:/etc/passwd:ro" --volume="/etc/shadow:/etc/shadow:ro" --volume="/etc/sudoers.d:/etc/sudoers.d:ro" -v /tmp/.X11-unix:/tmp/.X11-unix pgmodeler-docker-x11/run:v0.9.2-alpha1`
 
-### Windows
-***Coming Soon***
