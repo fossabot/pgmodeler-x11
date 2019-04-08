@@ -4,10 +4,11 @@
 Build and run the latest version of [pgModeler](https://pgmodeler.io/) inside a  Docker container on Linux (& macOS).
 
 
-```
-This project is also an example of creating a build environment that does cross-platform UI compilation from inside Docker, compiling using GTK and Rust.
-i.e. it is a mechanism to build Linux and macOS binaries in Docker.
-```
+> This project is also an example of creating a build environment that does
+> cross-platform UI compilation from inside Docker, compiling using GTK and
+> Rust. i.e. it is a mechanism to build Linux and macOS binaries in Docker.
+>  
+> -- https://github.com/mvniekerk
 
 ## Why?
 
