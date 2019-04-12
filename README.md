@@ -20,9 +20,9 @@ Build and run the latest version of [pgModeler](https://pgmodeler.io/) inside a 
   
 Change the `PGMODELER_VERSION` in the container to build another version to be run, add `PGMODELER_VERSION` as an environment variable when running the launcher image to start a different run image.
 
-* Because having a base Docker pgModeler image to be shared between users on all platforms helps address the security concerns raised by running binaries others have built. A company (such as a bank) can compile its own image and can audit how it was built and how it was stored - banks are funnt that way!
+* Because having a base Docker pgModeler image to be shared between users on all platforms helps address the security concerns raised by running binaries others have built. A company (such as a bank) can compile its own image and can audit how it was built and how it was stored - banks are funny that way!
 
-* Because having a reproducible way of building GTK applications for the three major desktop platforms using Docker and the Rust rocks!
+* Because having a reproducible way of building GTK applications for the three major desktop platforms using Docker and Rust rocks!
 
 ## About pgModeler and commercial support
 pgModeler [provides pre-compiled binaries at a small price](https://pgmodeler.io/download?purchase=true).
