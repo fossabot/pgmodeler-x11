@@ -6,8 +6,11 @@ jobs:
     environment:
       IMAGE_NAME: grindrodbank/pgmodeler-docker-x11
       PGMODELER_VERSION: v0.9.2-alpha1
+    working_directory: ~/pgmodeler-docker
     steps:
       - checkout
+      - setup_remote_docker:
+          docker_layer_caching: true
       - run: |
           cd container/docker 
           docker build -t $IMAGE_NAME:latest --build-arg PGMODELER_VERSION=$PGMODELER_VERSION .  
