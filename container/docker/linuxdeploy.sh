@@ -237,7 +237,7 @@ if [ $? -ne 0 ]; then
 fi
 
 echo "Compiling code..."
-make -j8  >> $LOG 2>&1
+make -j8  | $LOG 2>&1
 
 if [ $? -ne 0 ]; then
   echo
@@ -247,7 +247,7 @@ if [ $? -ne 0 ]; then
 fi
 
 echo "Installing dependencies..."
-make install INSTALL_ROOT=$BUILD_DIR  >> $LOG 2>&1
+make install INSTALL_ROOT=$BUILD_DIR  | $LOG 2>&1
 
 if [ $? -ne 0 ]; then
   echo
