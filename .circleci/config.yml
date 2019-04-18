@@ -1,0 +1,24 @@
+version: 2
+jobs:
+  build:
+    environment:
+      IMAGE_NAME: grindrodbank/pgmodeler-docker-x11
+      PGMODELER_VERSION: v0.9.2-alpha1
+    docker:
+      - image: docker
+    steps:
+      - checkout
+      - setup_remote_docker
+          docker_layer_caching: true
+      - run: cd container/docker   
+      - run:
+          name: Build Docker image
+          command: docker build -t $IMAGE_NAME:latest --build-arg PGMODELER_VERSION=$PGMODELER_VERSION .
+workflows:
+  version: 2
+  build-master:
+    jobs:
+      - build:
+          filters:
+            branches:
+              only: master
