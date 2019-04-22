@@ -13,7 +13,7 @@ jobs:
           docker_layer_caching: true
           version: 18.06.0-ce
       - run: |
-          cd container
+          cd container/docker
           docker build -t $IMAGE_NAME:latest --build-arg PGMODELER_VERSION=$PGMODELER_VERSION .
 workflows:
   version: 2
