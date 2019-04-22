@@ -1,4 +1,4 @@
-#!/usr/bin/env bash
+#!/bin/bash
 
 export PGMODELER_VERSION=v0.9.2-alpha1
 echo "Building for version ${PGMODELER_VERSION}"

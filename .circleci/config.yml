@@ -27,6 +27,12 @@ jobs:
         - setup_remote_docker:
             docker_layer_caching: true
             version: 18.06.0-ce
+        - run: |
+            cd container 
+            pwd
+            ls
+            ls -la
+        - run: build_multi.sh
         - run:
             name: build
             command: container/build_multi.sh
