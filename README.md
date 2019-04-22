@@ -54,7 +54,7 @@ The launcher compiles and links inside a container that has [Macports](https://w
 
 In the `container` directory, run `./build.sh`.
 
-This will create two images: `pgmodeler-docker-x11/build` and `pgmodeler-docker-x11/run`.
+This will create an image: `pgmodeler-docker-x11/run`.
 
 This will take ~15 minutes.
 
