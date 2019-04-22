@@ -31,6 +31,7 @@ jobs:
             cd container 
             pwd
             ls
+            ls -la
             ./build_multi.sh        
 workflows:
   version: 2
