@@ -14,7 +14,7 @@ jobs:
           version: 18.06.0-ce
       - run: |
           cd container
-          docker build -t $IMAGE_NAME:latest --build-arg PGMODELER_VERSION=$PGMODELER_VERSION --file=`pwd`/docker/Dockerfile .
+          docker build -t $IMAGE_NAME:latest --build-arg PGMODELER_VERSION=$PGMODELER_VERSION .
 workflows:
   version: 2
   build-commit:
