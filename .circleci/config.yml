@@ -29,7 +29,9 @@ jobs:
             version: 18.06.0-ce
         - run: |
             cd container 
-            ./build_multi.sh         
+            pwd
+            ls
+            ./build_multi.sh        
 workflows:
   version: 2
   build-commit:
