@@ -1,3 +1,5 @@
+[![CircleCI](https://circleci.com/gh/GrindrodBank/pgmodeler-x11.svg?style=svg)](https://circleci.com/gh/GrindrodBank/pgmodeler-x11)
+
 # pgModeler-X11 (X11 in Docker)
 
 ## What's this?
