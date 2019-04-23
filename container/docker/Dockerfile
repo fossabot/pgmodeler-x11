@@ -1,4 +1,5 @@
-FROM ubuntu:18.04
+# Step : Build image
+FROM ubuntu:18.04 as BUILD
 
 LABEL maintainer="Michael van Niekerk <mvniekerk@gmail.com>"
 
@@ -20,3 +21,9 @@ RUN chmod +x ./linuxdeploy.sh; ./linuxdeploy.sh
 WORKDIR /source/pgmodeler/dist/
 RUN mv pg* pgmodeler.tar.gz
 
+# Step : Create Runnable pgmodeler
+COPY --from=BUILD /source/pgmodeler/dist/pgmodeler.tar.gz /opt/
+WORKDIR /opt
+RUN tar -xvzf pgmodeler.tar.gz; mv pgmodeler.tar.gz /pgmodeler.tar.gz; mv pgmodeler* pgmodeler
+RUN apt-get update; apt-get install -y libxml2 libgl1 libpng16-16 libharfbuzz-gobject0 libqt5gui5 libpq5; apt-get clean
+CMD /opt/pgmodeler/start-pgmodeler.sh
