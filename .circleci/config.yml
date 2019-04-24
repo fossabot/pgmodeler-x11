@@ -15,7 +15,7 @@ jobs:
       - run: |
           TAG=$PGMODELER_VERSION
           cd container
-          docker build -t $IMAGE_NAME:$TAG --build-arg PGMODELER_VERSION=$PGMODELER_VERSION --file=`pwd`/docker/Dockerfile .          
+          docker build --squash -t $IMAGE_NAME:$TAG --build-arg PGMODELER_VERSION=$PGMODELER_VERSION --file=`pwd`/docker/Dockerfile .          
           docker login -u $DOCKER_USER -p $DOCKER_PASS
           docker push $IMAGE_NAME:$TAG
           # Tag and push latest
