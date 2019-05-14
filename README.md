@@ -1,4 +1,5 @@
 [![CircleCI](https://circleci.com/gh/GrindrodBank/pgmodeler-x11.svg?style=svg)](https://circleci.com/gh/GrindrodBank/pgmodeler-x11)
+[![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2FGrindrodBank%2Fpgmodeler-x11.svg?type=shield)](https://app.fossa.io/projects/git%2Bgithub.com%2FGrindrodBank%2Fpgmodeler-x11?ref=badge_shield)
 
 # pgModeler-X11 (X11 in Docker)
 
@@ -88,3 +89,7 @@ To run it:
 
 ---
 &copy; 2019, Grindrod Bank Limited.
+
+
+## License
+[![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2FGrindrodBank%2Fpgmodeler-x11.svg?type=large)](https://app.fossa.io/projects/git%2Bgithub.com%2FGrindrodBank%2Fpgmodeler-x11?ref=badge_large)
