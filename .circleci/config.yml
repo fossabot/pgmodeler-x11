@@ -13,6 +13,7 @@ jobs:
           docker_layer_caching: true
       # build and push Docker image to dockerhub.    
       - run: |
+          set -o xtrace #debugging 
           TAG=$PGMODELER_VERSION
           cd container
           docker build -t $IMAGE_NAME:$TAG --build-arg PGMODELER_VERSION=$PGMODELER_VERSION --file=`pwd`/docker/Dockerfile .          
