@@ -1,4 +1,5 @@
 [![CircleCI](https://circleci.com/gh/GrindrodBank/pgmodeler-x11.svg?style=svg)](https://circleci.com/gh/GrindrodBank/pgmodeler-x11)
+[![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2FGrindrodBank%2Fpgmodeler-x11.svg?type=shield)](https://app.fossa.io/projects/git%2Bgithub.com%2FGrindrodBank%2Fpgmodeler-x11?ref=badge_shield)
 
 # pgModeler-X11 (X11 in Docker)
 
@@ -85,6 +86,10 @@ Export it ```export MY_IP=`ipconfig en0` ```
 To run it:
 
 `docker run --rm -it --user $(id -u) -e DISPLAY=$MY_IP --workdir=$(pwd) --volume="/User/$USER:/home/$USER" --volume="/etc/group:/etc/group:ro" --volume="/etc/passwd:/etc/passwd:ro" --volume="/etc/shadow:/etc/shadow:ro" --volume="/etc/sudoers.d:/etc/sudoers.d:ro" -v /tmp/.X11-unix:/tmp/.X11-unix pgmodeler-docker-x11/run:v0.9.2-alpha1`
+
+
+## License
+[![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2FGrindrodBank%2Fpgmodeler-x11.svg?type=large)](https://app.fossa.io/projects/git%2Bgithub.com%2FGrindrodBank%2Fpgmodeler-x11?ref=badge_large)
 
 ---
 &copy; 2019, Grindrod Bank Limited.
