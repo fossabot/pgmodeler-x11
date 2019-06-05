@@ -76,7 +76,7 @@ The launcher looks at your environment and then runs the command below and lets 
 But nothing is keeping you from doing it yourself.
 **NOTE:**  this can/will clobber your config if you're not using 0.9.2-alpha1.
 ### Linux
-`docker run --rm -it --user $(id -u) -e DISPLAY=unix$DISPLAY --workdir=$(pwd) --volume="/home/$USER:/home/$USER" --volume="/etc/group:/etc/group:ro" --volume="/etc/passwd:/etc/passwd:ro" --volume="/etc/shadow:/etc/shadow:ro" --volume="/etc/sudoers.d:/etc/sudoers.d:ro" -v /tmp/.X11-unix:/tmp/.X11-unix pgmodeler-docker-x11/run:v0.9.2-alpha1`
+`docker run --rm -it --user $(id -u) -e DISPLAY=unix$DISPLAY --workdir=$(pwd) --volume="/home/$USER:/home/$USER" --volume="/etc/group:/etc/group:ro" --volume="/etc/passwd:/etc/passwd:ro" --volume="/etc/shadow:/etc/shadow:ro" --volume="/etc/sudoers.d:/etc/sudoers.d:ro" -v /tmp/.X11-unix:/tmp/.X11-unix grindrodbank/pgmodeler`
 
 ### macOS
 You need XQuartz running and you need your ip: `ipconfig en0` or `ipconfig en1`. Use one of these commands to get your IP.
@@ -85,7 +85,7 @@ Export it ```export MY_IP=`ipconfig en0` ```
 
 To run it:
 
-`docker run --rm -it --user $(id -u) -e DISPLAY=$MY_IP --workdir=$(pwd) --volume="/User/$USER:/home/$USER" --volume="/etc/group:/etc/group:ro" --volume="/etc/passwd:/etc/passwd:ro" --volume="/etc/shadow:/etc/shadow:ro" --volume="/etc/sudoers.d:/etc/sudoers.d:ro" -v /tmp/.X11-unix:/tmp/.X11-unix pgmodeler-docker-x11/run:v0.9.2-alpha1`
+`docker run --rm -it --user $(id -u) -e DISPLAY=$MY_IP --workdir=$(pwd) --volume="/User/$USER:/home/$USER" --volume="/etc/group:/etc/group:ro" --volume="/etc/passwd:/etc/passwd:ro" --volume="/etc/shadow:/etc/shadow:ro" --volume="/etc/sudoers.d:/etc/sudoers.d:ro" -v /tmp/.X11-unix:/tmp/.X11-unix grindrodbank/pgmodeler`
 
 
 ## License
