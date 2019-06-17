@@ -150,9 +150,9 @@ else
            libQt5Core.so.5 \
            libQt5XcbQpa.so.5 \
            libQt5Svg.so.5 \
-           libicui18n.so.5* \
-           libicuuc.so.5* \
-           libicudata.so.5*"
+           libicui18n.so.6* \
+           libicuuc.so.6* \
+           libicudata.so.6*"
 fi
 
 clear 
