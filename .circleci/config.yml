@@ -13,17 +13,17 @@ jobs:
           docker_layer_caching: true
       # build and push Docker image to dockerhub.    
       - run: 
-        name: Build and push
-        no_output_timeout: 20m
-    command: |
-      set -o xtrace
-      TAG=$PGMODELER_VERSION
-      cd container
-      docker login -u $DOCKER_USER -p $DOCKER_PASS
-      docker build -t $IMAGE_NAME:$TAG --build-arg PGMODELER_VERSION=$PGMODELER_VERSION --file=`pwd`/docker/Dockerfile .          
-      docker push $IMAGE_NAME:$TAG
-      docker tag $IMAGE_NAME:$TAG $IMAGE_NAME:latest
-      docker push $IMAGE_NAME:latest          
+          name: Build and push
+          no_output_timeout: 20m
+          command: |
+            set -o xtrace
+            TAG=$PGMODELER_VERSION
+            cd container
+            docker login -u $DOCKER_USER -p $DOCKER_PASS
+            docker build -t $IMAGE_NAME:$TAG --build-arg PGMODELER_VERSION=$PGMODELER_VERSION --file=`pwd`/docker/Dockerfile .          
+            docker push $IMAGE_NAME:$TAG
+            docker tag $IMAGE_NAME:$TAG $IMAGE_NAME:latest
+            docker push $IMAGE_NAME:latest          
 workflows:
   version: 2
   build-commit:
