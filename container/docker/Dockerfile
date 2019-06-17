@@ -3,7 +3,7 @@ FROM ubuntu:18.04 as BUILD
 
 LABEL maintainer="Michael van Niekerk <mvniekerk@gmail.com>"
 
-ARG PGMODELER_VERSION=v0.9.2-alpha1
+ARG PGMODELER_VERSION=v0.9.2-beta
 ENV PGMODELER_VERSION=$PGMODELER_VERSION
 
 RUN echo "${PGMODELER_VERSION}"
