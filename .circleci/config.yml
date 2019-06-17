@@ -15,7 +15,7 @@ jobs:
       - run: 
         name: Build and push
         no_output_timeout: 20m
-	  command: |
+    command: |
       set -o xtrace
       TAG=$PGMODELER_VERSION
       cd container
