@@ -1,5 +1,5 @@
 [Desktop Entry]
-Name=pgmodeler-docker-x11
+Name=pgmodeler-x11
 GenericName=PostgreSQL ER Database Modeler running inside Docker
 Comment=Program with nice Qt interface for visual modeling PostgreSQL database in terms on entity relationship model
 Exec=pgmodeler-docker-x11

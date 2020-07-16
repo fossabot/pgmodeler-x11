@@ -1,6 +1,3 @@
-[![CircleCI](https://circleci.com/gh/GrindrodBank/pgmodeler-x11.svg?style=svg)](https://circleci.com/gh/GrindrodBank/pgmodeler-x11)
-[![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2FGrindrodBank%2Fpgmodeler-x11.svg?type=shield)](https://app.fossa.io/projects/git%2Bgithub.com%2FGrindrodBank%2Fpgmodeler-x11?ref=badge_shield)
-
 # pgModeler-X11 (X11 in Docker)
 
 ## What's this?
@@ -10,8 +7,11 @@ Build and run the latest version of [pgModeler](https://pgmodeler.io/) inside a 
 > This project is also an example of creating a build environment that does
 > cross-platform UI compilation from inside Docker, compiling using GTK and
 > Rust. i.e. it is a mechanism to build Linux and macOS binaries in Docker.
->  
+>   
+> Maitainers:
+> ===========
 > -- https://github.com/mvniekerk
+> -- https://github.com/bank-builder
 
 ## Why?
 
@@ -76,20 +76,24 @@ The launcher looks at your environment and then runs the command below and lets 
 But nothing is keeping you from doing it yourself.
 **NOTE:**  this can/will clobber your config if you're not using 0.9.2-alpha1.
 ### Linux
-`docker run --rm -it --user $(id -u) -e DISPLAY=unix$DISPLAY --workdir=$(pwd) --volume="/home/$USER:/home/$USER" --volume="/etc/group:/etc/group:ro" --volume="/etc/passwd:/etc/passwd:ro" --volume="/etc/shadow:/etc/shadow:ro" --volume="/etc/sudoers.d:/etc/sudoers.d:ro" -v /tmp/.X11-unix:/tmp/.X11-unix pgmodeler-docker-x11/run:v0.9.2-alpha1`
+`docker run --rm -it --user $(id -u) -e DISPLAY=unix$DISPLAY --workdir=$(pwd) --volume="/home/$USER:/home/$USER" --volume="/etc/group:/etc/group:ro" --volume="/etc/passwd:/etc/passwd:ro" --volume="/etc/shadow:/etc/shadow:ro" --volume="/etc/sudoers.d:/etc/sudoers.d:ro" -v /tmp/.X11-unix:/tmp/.X11-unix cybermint/pgmodeler`
 
 ### macOS
-You need XQuartz running and you need your ip: `ipconfig en0` or `ipconfig en1`. Use one of these commands to get your IP.
+You need XQuartz installed, and 'Allow connections from network clients' selected in the X11 preferences.
 
-Export it ```export MY_IP=`ipconfig en0` ```
+Run the following two commands:
 
-To run it:
+```bash
+xhost + 127.0.0.1 
+```
 
-`docker run --rm -it --user $(id -u) -e DISPLAY=$MY_IP --workdir=$(pwd) --volume="/User/$USER:/home/$USER" --volume="/etc/group:/etc/group:ro" --volume="/etc/passwd:/etc/passwd:ro" --volume="/etc/shadow:/etc/shadow:ro" --volume="/etc/sudoers.d:/etc/sudoers.d:ro" -v /tmp/.X11-unix:/tmp/.X11-unix pgmodeler-docker-x11/run:v0.9.2-alpha1`
+```bash
+docker run --rm -it -e DISPLAY=host.docker.internal:0 --workdir=$(pwd) -v /Users/{your_user_folder}:/home/{your_user_folder} --volume="/etc/group:/etc/group:ro" --volume="/etc/passwd:/etc/passwd:ro" --volume="/etc/sudoers.d:/etc/sudoers.d:ro" -v /tmp/.X11-unix:/tmp/.X11-unix -v $(pwd):$(pwd) cybermint/pgmodeler
+```
 
+***Note**: Replace {your_user_folder} with the literal name of your home folder. Do not use the $USER variable.*
 
-## License
-[![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2FGrindrodBank%2Fpgmodeler-x11.svg?type=large)](https://app.fossa.io/projects/git%2Bgithub.com%2FGrindrodBank%2Fpgmodeler-x11?ref=badge_large)
 
 ---
 &copy; 2019, Grindrod Bank Limited.
+&copy; 2020, Cyber-Mint (Pty) Ltd
