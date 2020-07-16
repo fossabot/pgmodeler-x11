@@ -217,7 +217,7 @@ fn run_pgmodeler(display_variable: String, user_id: String, user_name: String, a
     let home_volume = format!("--volume=/home/{}:/home/{}", user_name, user_name);
     let home_volume = home_volume.as_str();
 
-    let image_name = format!("grindrodbank/pgmodeler-x11:{}", pgmodeler_version);
+    let image_name = format!("cybermint/pgmodeler-x11:{}", pgmodeler_version);
     let image_name = image_name.as_str();
 
     let args = &[
@@ -285,7 +285,7 @@ fn run_pgmodeler(display_variable: String, user_id: String, user_name: String, a
     let home_volume = format!("--volume=/Users/{}:/home/{}", user_name, user_name);
     let home_volume = home_volume.as_str();
 
-    let image_name = format!("grindrodbank/pgmodeler-x11:{}", pgmodeler_version);
+    let image_name = format!("cybermint/pgmodeler-x11:{}", pgmodeler_version);
     let image_name = image_name.as_str();
 
     let args = &[
@@ -367,7 +367,7 @@ fn build_ui(application: &gtk::Application) {
 }
 
 fn main() {
-    let application = gtk::Application::new("za.co.grindrodbank.pgmodeler-x11",
+    let application = gtk::Application::new("com.cybermint.pgmodeler-x11",
                                             Default::default())
         .expect("Initialization failed...");
 

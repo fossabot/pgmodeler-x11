@@ -4,7 +4,7 @@ jobs:
     docker:
       - image: docker
     environment:
-      IMAGE_NAME: grindrodbank/pgmodeler
+      IMAGE_NAME: cybermint/pgmodeler
       PGMODELER_VERSION: v0.9.2-beta
     working_directory: ~/pgmodeler-docker
     steps:
